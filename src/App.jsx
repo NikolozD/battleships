@@ -25,7 +25,7 @@ function App() {
   return (
     <>
       <StatusContext.Provider value={statusContext}>
-        {hitCount >= 17 ? alert("Game over") : null}
+        {hitCount >= 17 ? alert("You Win") : null}
         <Grid />
         <Ships />
       </StatusContext.Provider>
