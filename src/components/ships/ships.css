@@ -1,0 +1,7 @@
+.hit_small {
+    display: flex;
+}
+.hit_small img {
+    width: 5px;
+    height: 5px;
+}

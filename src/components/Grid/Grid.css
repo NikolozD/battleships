@@ -1,0 +1,11 @@
+.grid > .cellRow:last-child > .cell {
+  border-bottom: none;
+}
+.grid { 
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+    border: solid 1px;
+    border-color: rgb(152, 154, 156);
+}

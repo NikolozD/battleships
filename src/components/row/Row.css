@@ -1,0 +1,10 @@
+.cellRow > .cell:last-child {
+    border-right: none;
+}
+.cellRow {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    
+    
+}
