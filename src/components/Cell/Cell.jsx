@@ -36,9 +36,17 @@ function Cell({ x, y }) {
     setAttemptCount((curHitCount) => curHitCount + 1);
   }
   if (hit.status) {
-    return <div className="cell">X</div>;
+    return (
+      <div className="cell">
+        <img src="\assets\hit_small.png" alt="" />
+      </div>
+    );
   } else if (miss) {
-    return <div className="cell">Y</div>;
+    return (
+      <div className="cell">
+        <img src="\assets\miss_small.png" alt="" />
+      </div>
+    );
   } else {
     return <div onClick={handleClick} className="cell"></div>;
   }
