@@ -18,3 +18,9 @@
     width: 1rem;
     height: 1rem;
 }
+
+@media (max-width: 400px) {
+    .status_board {
+        margin-left: 0
+    }
+}

@@ -4,7 +4,7 @@ import "./ship.css";
 import { StatusContext } from "../../../StatusContext";
 function Ship({ name, positions, icon }) {
   const [status, setStatus] = useState(Array(positions.length).fill(icon));
-  const { shipStatus, attemptcount } = useContext(StatusContext);
+  const { shipStatus, attemptcount, isrestarting } = useContext(StatusContext);
 
   useEffect(() => {
     if (shipStatus.status && shipStatus.name == name) {
@@ -16,6 +16,9 @@ function Ship({ name, positions, icon }) {
         );
         return newStatus;
       });
+    }
+    if (isrestarting) {
+      setStatus(Array(positions.length).fill(icon));
     }
   }, [attemptcount]);
   console.log(status);

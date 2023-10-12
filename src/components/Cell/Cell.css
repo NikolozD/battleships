@@ -13,3 +13,18 @@
     height: 100%;
     background-color:rgb(152, 154, 156) ;
 }
+
+@media (max-width: 400px) {
+    .cell {
+        width: 35px;
+    height: 35px;
+    }
+}
+
+
+@media (max-height: 950px) and (min-width: 500px) {
+    .cell {
+        width: 32px;
+        height: 32px;
+    }
+ }

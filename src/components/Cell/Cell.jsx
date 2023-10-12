@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./Cell.css";
 import { ShipsData } from "../../mocks/index";
 import { StatusContext } from "../../../StatusContext";
@@ -7,9 +7,20 @@ function Cell({ x, y }) {
   const [miss, setMiss] = useState(false);
   const cellPosition = [x, y];
   const { layout } = ShipsData;
-  const { setShipStatus, setAttemptCount, setHitCount } =
-    useContext(StatusContext);
-
+  const {
+    setShipStatus,
+    setAttemptCount,
+    setHitCount,
+    isrestarting,
+    setIsRestarting,
+  } = useContext(StatusContext);
+  useEffect(() => {
+    if (isrestarting) {
+      sethit({ status: false, name: "" });
+      setMiss(false);
+      setIsRestarting(false);
+    }
+  }, [isrestarting]);
   function checkHit() {
     for (const ship of layout) {
       for (const shipPosition of ship.positions) {

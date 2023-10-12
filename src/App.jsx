@@ -4,7 +4,8 @@ import Grid from "./components/Grid/Grid";
 import Row from "./components/row/Row";
 import Ships from "./components/ships/ships";
 import { StatusContext } from "../StatusContext";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Alert from "./components/alert/Alert";
 
 function App() {
   const [shipStatus, setShipStatus] = useState({
@@ -13,6 +14,7 @@ function App() {
   });
   const [attemptcount, setAttemptCount] = useState(0);
   const [hitCount, setHitCount] = useState(0);
+  const [isrestarting, setIsRestarting] = useState(false);
   const statusContext = {
     shipStatus: shipStatus,
     setShipStatus: setShipStatus,
@@ -20,12 +22,25 @@ function App() {
     setAttemptCount: setAttemptCount,
     setHitCount: setHitCount,
     hitCount: hitCount,
+    setIsRestarting: setIsRestarting,
+    isrestarting: isrestarting,
   };
+  function restart() {
+    setHitCount(0);
+    setAttemptCount(0);
+    setShipStatus({
+      status: false,
+      name: "",
+    });
+    setIsRestarting(true);
+  }
 
   return (
     <>
+      {hitCount >= 17 ? (
+        <Alert handleClick={restart} attempts={attemptcount} />
+      ) : null}
       <StatusContext.Provider value={statusContext}>
-        {hitCount >= 17 ? alert("You Win") : null}
         <Grid />
         <Ships />
       </StatusContext.Provider>
