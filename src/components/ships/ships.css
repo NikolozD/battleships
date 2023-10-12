@@ -11,6 +11,8 @@
     margin-left: 5rem;
     justify-content: center;
     align-items: start;
+    width: fit-content;
+    height: fit-content;
 }
 .status_icon {
     width: 1rem;
