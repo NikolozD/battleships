@@ -11,7 +11,9 @@ function Ship({ name, positions, icon }) {
       setStatus((curStatus) => {
         const newStatus = [...curStatus];
         newStatus.shift();
-        newStatus.push(<img src="\assets\hit.png" alt="" />);
+        newStatus.push(
+          <img className="status_icon" src="\assets\hit.png" alt="" />
+        );
         return newStatus;
       });
     }

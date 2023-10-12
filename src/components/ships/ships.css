@@ -5,3 +5,14 @@
     width: 5px;
     height: 5px;
 }
+.status_board {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5rem;
+    justify-content: center;
+    align-items: start;
+}
+.status_icon {
+    width: 1rem;
+    height: 1rem;
+}

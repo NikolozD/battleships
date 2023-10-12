@@ -1,19 +1,23 @@
 .ship_status .icon{
     object-fit: contain;
-    width: 40px;
-    height: 20px;
+    width: 10rem;
+    height: 5rem;
     
 }
 .ship_status .status{
     object-fit: contain;
     display: flex;
     flex-direction: row;
-    width: 10px;
-    height: 10px;
+    width: fit-content;
+    height: fit-content
 }
 
 
 .ship_status {
     display: flex;
     align-items: center;
+}
+.status .status_icon {
+    width: 2rem;
+    height: 2rem;
 }
